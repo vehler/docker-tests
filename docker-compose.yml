@@ -1,0 +1,23 @@
+version: '3'
+services: 
+    app:
+        build: ./client
+        image: app:1.0.0
+        volumes: 
+            - ./client:/usr/share/nginx/html
+        ports: 
+            - 8080:80
+    static-app:
+        build: ./static
+        image: static:1.0.0
+        volumes: 
+            - ./static:/usr/share/nginx/html
+        ports: 
+            - 8081:80
+    server:
+        build: ./server
+        image: node-server:1.0.0
+        volumes: 
+            - ./server:/app
+        ports: 
+            - 8085:80
