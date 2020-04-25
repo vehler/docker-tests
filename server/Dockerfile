@@ -14,6 +14,6 @@ RUN npm install
 # Bundle app source
 COPY . ./app
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start:watch"]
 
 EXPOSE 80

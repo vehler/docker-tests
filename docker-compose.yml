@@ -24,3 +24,16 @@ services:
             - ./server:/app
         ports: 
             - 8085:80
+
+    # db:
+    #     image: mariadb
+    #     restart: always
+    #     environment:
+    #         MYSQL_ROOT_USER: root
+    #         MYSQL_ROOT_PASSWORD: root
+    
+    # adminer:
+    #     image: adminer
+    #     restart: always
+    #     ports:
+    #         - 8090:8080
