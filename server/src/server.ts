@@ -14,7 +14,6 @@ class WebApplication {
     this.loadMiddlewares();
     this.loadErrorHandlers();
     this.loadRoutes();
-    this.start();
 
   }
 
@@ -48,7 +47,6 @@ class WebApplication {
     this.app.use(home);
 
   }
-
 
   public start(): Application {
 
