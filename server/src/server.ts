@@ -1,3 +1,4 @@
+import * as path  from 'path';
 import * as express from 'express';
 import { Application } from 'express';
 import { home } from './routes';
@@ -44,7 +45,7 @@ class WebApplication {
 
   private loadRoutes(): void {
 
-    this.app.use(home);
+    this.app.get('/', (_req, res) =>  res.sendFile(path.resolve('../', '../', 'client/')));
 
   }
 

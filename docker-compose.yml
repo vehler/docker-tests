@@ -2,38 +2,10 @@ version: '3'
 services: 
 
     app:
-        build: ./client
+        build: .
         image: app:1.0.0
         volumes: 
-            - ./client:/app
+            - ./client:/app/client
+            - ./server:/app/server
         ports: 
-            - 8080:4200
-
-    static-app:
-        build: ./static
-        image: static:1.0.0
-        volumes: 
-            - ./static:/usr/share/nginx/html
-        ports: 
-            - 8081:80
-
-    server:
-        build: ./server
-        image: node-server:1.0.0
-        volumes: 
-            - ./server:/app
-        ports: 
-            - 8085:80
-
-    # db:
-    #     image: mariadb
-    #     restart: always
-    #     environment:
-    #         MYSQL_ROOT_USER: root
-    #         MYSQL_ROOT_PASSWORD: root
-    
-    # adminer:
-    #     image: adminer
-    #     restart: always
-    #     ports:
-    #         - 8090:8080
+            - 8080:80
